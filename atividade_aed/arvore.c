@@ -82,6 +82,16 @@ int main(){
     arv_imprime(a);
     printf("\n");
 
+    printf("A árvore contém o elemento 'x'? %d\n", arv_pertence(a, 'x'));
+    printf("A árvore contém o elemento 'y'? %d\n", arv_pertence(a, 'y'));
+
+    a->esq->esq->esq = arv_libera(a->esq->esq->esq);
+    printf("A nova árvore agora é:\n");
+    arv_imprime(a);
+    printf("\n");
+    printf("A árvore contém o elemento 'x'? %d\n", arv_pertence(a, 'x'));
+    printf("A árvore contém o elemento 'y'? %d\n", arv_pertence(a, 'y'));
+
     // Libera a nova árvore
     a = arv_libera(a);
 
