@@ -78,6 +78,8 @@ int main(){
 
     a->dir->esq = arv_libera (a->dir->esq);
 
+    //Aqui é meu
+
     printf("A nova árvore agora é:\n");
     arv_imprime(a);
     printf("\n");
@@ -94,8 +96,8 @@ int main(){
     printf("A árvore contém o elemento 'y'? %d\n", arv_pertence(a, 'y'));
 
     
-    a->esq->dir-> esq = arv_cria('g', arv_criavazia(), arv_criavazia());
-    a->esq->dir-> dir = arv_cria('h', arv_criavazia(), arv_criavazia());
+    a->esq->dir->esq = arv_cria('g', arv_criavazia(), arv_criavazia());
+    a->esq->dir->dir = arv_cria('h', arv_criavazia(), arv_criavazia());
     printf("A nova árvore agora é:\n");
     arv_imprime(a);
     printf("\n");
@@ -105,7 +107,16 @@ int main(){
     printf("A árvore contém o elemento 'h'? %d\n", arv_pertence(a, 'h'));
     printf("A árvore contém o elemento 'a'? %d\n", arv_pertence(a, 'a'));
     printf("A árvore contém o elemento 'b'? %d\n", arv_pertence(a, 'b'));
+    
+    a->dir = arv_libera(a->dir);
+    printf("A nova árvore agora é:\n");
+    arv_imprime(a);
+    printf("\n");
 
+    a->esq->dir = arv_libera(a->esq->dir);
+    printf("A nova árvore agora é:\n");
+    arv_imprime(a);
+    printf("\n");
     // Libera a nova árvore
     a = arv_libera(a);
 
